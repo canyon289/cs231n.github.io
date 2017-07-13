@@ -61,6 +61,8 @@ class KNearestNeighbor(object):
       point.
     """
     num_test = X.shape[0]
+    import pdb
+    pdb.set_trace()
     num_train = self.X_train.shape[0]
     dists = np.zeros((num_test, num_train))
     for i in xrange(num_test):
@@ -71,7 +73,7 @@ class KNearestNeighbor(object):
         # training point, and store the result in dists[i, j]. You should   #
         # not use a loop over dimension.                                    #
         #####################################################################
-        pass
+        dists[i,j] = np.sqrt(np.sum(np.square(self.X_train[j,:] - X[i, :])))
         #####################################################################
         #                       END OF YOUR CODE                            #
         #####################################################################
